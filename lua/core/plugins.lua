@@ -15,13 +15,16 @@ local packer_bootstrap = ensure_packer()
 
 require('packer').startup(function(use)
   use { 'wbthomason/packer.nvim' }
-  use { 'projekt0n/github-nvim-theme' }
+  use { 'projekt0n/github-nvim-theme',
+    config = function()
+      vim.cmd('colorscheme github_dark_high_contrast')
+    end
+  }
   use {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-      vim.cmd('colorscheme github_dark_high_contrast')
-    end,
+    end
   }
   use {
     "max397574/better-escape.nvim",
@@ -29,7 +32,7 @@ require('packer').startup(function(use)
       require("better_escape").setup({
         mapping = { "kj" },
       })
-    end,
+    end
   }
   use {
     'ray-x/go.nvim',
@@ -52,4 +55,4 @@ require('go').setup({
     breakpoint = "",
     currentpos = ""
   },
-})      
+})
