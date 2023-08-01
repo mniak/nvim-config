@@ -13,11 +13,15 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-
-  
+require('packer').startup(function(use)
+  use { 'wbthomason/packer.nvim' }
+  use { 'projekt0n/github-nvim-theme' }
+  use {
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    requires = { 'nvim-lua/plenary.nvim' }
+  }
   if packer_bootstrap then
     require('packer').sync()
   end
 end)
+vim.cmd('colorscheme github_dark_high_contrast')
