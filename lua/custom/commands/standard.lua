@@ -21,10 +21,4 @@ require("legendary").keymaps({
     "<cmd>qall!<cr>",
     desc = "Force close all editors",
   },
-  {
-    "<c-p>",
-    "<cmd>Telescope find_files<cr>",
-    desc = "Go to file...",
-    modes = { "n" },
-  },
 })
