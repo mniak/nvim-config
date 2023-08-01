@@ -5,6 +5,6 @@ vim.g.maplocalleader = ' '
 
 vim.wo.number = true
 
-require("core.keymap")
 require("core.plugins")
+require("core.keymap")
 
