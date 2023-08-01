@@ -1,27 +1,29 @@
 require("legendary").keymaps({
   {
-    "<CMD>w<CR>",
-    desc = "Save",
+    "<c-s>",
+    "<cmd>w<cr>",
+    desc = "Save file",
+    modes = { "n" },
   },
   {
-    "<CMD>q<CR>",
+    "<cmd>q<cr>",
     desc = "Close Editor",
   },
   {
-    "<CMD>q!<CR>",
+    "<cmd>q!<cr>",
     desc = "Force close editor",
   },
   {
-    "<CMD>qall<CR>",
+    "<cmd>qall<cr>",
     desc = "Close all editors",
   },
   {
-    "<CMD>qall!<CR>",
+    "<cmd>qall!<cr>",
     desc = "Force close all editors",
   },
   {
-    "<C-p>",
-    "<CMD>Telescope find_files<CR>",
+    "<c-p>",
+    "<cmd>Telescope find_files<cr>",
     desc = "Go to file...",
     modes = { "n" },
   },
