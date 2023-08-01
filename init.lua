@@ -3,6 +3,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.wo.number = true
+
 require("core.keymap")
 require("core.plugins")
 
