@@ -44,15 +44,16 @@ require('packer').startup(function(use)
       'rcarriga/nvim-dap-ui',
       'theHamsta/nvim-dap-virtual-text',
     },
+    config = function()
+      require('go').setup({
+        icons = {
+          breakpoint = "",
+          currentpos = ""
+        },
+      })
+    end
   }
   if packer_bootstrap then
     require('packer').sync()
   end
 end)
-
-require('go').setup({
-  icons = {
-    breakpoint = "",
-    currentpos = ""
-  },
-})
