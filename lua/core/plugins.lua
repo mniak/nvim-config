@@ -20,6 +20,14 @@ require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
     requires = { 'nvim-lua/plenary.nvim' }
   }
+  use {
+    "max397574/better-escape.nvim",
+    config = function()
+      require("better_escape").setup({
+        mapping = {"kj"},
+      })
+    end,
+  }
   if packer_bootstrap then
     require('packer').sync()
   end
