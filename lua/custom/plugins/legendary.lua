@@ -4,7 +4,7 @@ return {
     priority = 10000,
     lazy = false,
     keys = {
-      { "<C-S-p>", "<cmd>Legendary<cr>", desc = "Show commands" },
+      { "<C-S-p>", "<cmd>Legendary<cr>", desc = "Show commands", mode = "n" },
     },
     dependencies = {
       { 'stevearc/dressing.nvim' },
@@ -13,12 +13,5 @@ return {
     lazy_nvim = {
       auto_register = true,
     },
-    config = function()
-      require('legendary').setup({
-        commands = {
-          { "<cmd>qall!<cr>", desc = "Force close all windows" }
-        }
-      })
-    end
   }
 }
