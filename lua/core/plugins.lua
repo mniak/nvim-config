@@ -18,18 +18,34 @@ require('packer').startup(function(use)
   use { 'projekt0n/github-nvim-theme' }
   use {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    requires = { 'nvim-lua/plenary.nvim' }
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      vim.cmd('colorscheme github_dark_high_contrast')
+    end,
   }
   use {
     "max397574/better-escape.nvim",
     config = function()
       require("better_escape").setup({
-        mapping = {"kj"},
+        mapping = { "kj" },
       })
+    end,
+  }
+  use {
+    'ray-x/go.nvim',
+    requires = {
+      'ray-x/guihua.lua',
+      'neovim/nvim-lspconfig',
+      'nvim-treesitter/nvim-treesitter',
+      'mfussenegger/nvim-dap',
+      'rcarriga/nvim-dap-ui',
+      'theHamsta/nvim-dap-virtual-text',
+    },
+    config = function()
+      require('go').setup()
     end,
   }
   if packer_bootstrap then
     require('packer').sync()
   end
 end)
-vim.cmd('colorscheme github_dark_high_contrast')
