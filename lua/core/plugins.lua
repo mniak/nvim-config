@@ -44,16 +44,24 @@ require('packer').startup(function(use)
       'rcarriga/nvim-dap-ui',
       'theHamsta/nvim-dap-virtual-text',
     },
-    config = function()
-      require('go').setup({
-        icons = {
-          breakpoint = "",
-          currentpos = ""
-        },
-      })
-    end
   }
   if packer_bootstrap then
     require('packer').sync()
   end
 end)
+vim.fn.sign_define('DapBreakpoint', {
+  text = '',
+  texthl = 'DepBreakpointsCurrentLine',
+  numhl = '',
+  linehl = 'DepBreakpointsCurrentLine',
+})
+vim.fn.sign_define('DapStopped', {
+  text = '',
+  texthl = 'DapUIPlayPauseNC',
+  numhl = '',
+  linehl = 'BreakpointCurrent',
+})
+require('go').setup({
+  icons = false,
+  dap_debug_keymap = false,
+})
