@@ -15,9 +15,9 @@ local packer_bootstrap = ensure_packer()
 
 require('packer').startup(function(use)
   use { 'wbthomason/packer.nvim' }
-  use { 'projekt0n/github-nvim-theme',
+  use { 'rafamadriz/neon',
     config = function()
-      vim.cmd('colorscheme github_dark_high_contrast')
+      vim.cmd('colorscheme neon')
     end
   }
   use {
