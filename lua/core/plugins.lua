@@ -27,10 +27,10 @@ require('packer').startup(function(use)
     end
   }
   use {
-    "max397574/better-escape.nvim",
+    'max397574/better-escape.nvim',
     config = function()
-      require("better_escape").setup({
-        mapping = { "kj" },
+      require('better_escape').setup({
+        mapping = { 'kj' },
       })
     end
   }
