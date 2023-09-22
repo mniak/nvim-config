@@ -1,10 +1,12 @@
--- Use space as leader key
--- Must be set before plugins
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+require("configs.standard")
 
-vim.wo.number = true
+require("plugins.packer")
+require("plugins.better-escape")
+require("plugins.telescope")
+require("plugins.go")
+require("plugins.nvim-tree")
 
-require("core.plugins")
-require("core.keymap")
-
+require("commands.standard")
+require("commands.go")
+require("commands.nvim-tree")
+require("commands.packer")
